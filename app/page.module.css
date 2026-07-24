@@ -1,0 +1,129 @@
+.hero {
+  position: relative;
+  /* Medium height to show more of the background image without excessive cropping */
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background removed to be handled by HeroSlider component */
+  background: #0b1221;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 55vh;
+    /* Shorter on mobile to prevent extreme zooming of landscape images */
+  }
+}
+
+.heroContent {
+  max-width: 800px;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-gold);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  color: var(--color-white);
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  color: var(--color-gold);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.sectionTitle::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--color-gold);
+  margin: 1rem auto 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 3rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--color-gold);
+}
+
+.cardImage {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardContent {
+  padding: 2rem;
+  text-align: center;
+}
+
+.cardTitle {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+}
+
+.cardPrice {
+  font-size: 1.2rem;
+  color: var(--color-gold);
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.ctaSection {
+  background: linear-gradient(rgba(11, 18, 33, 0.9), rgba(11, 18, 33, 0.9)), url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=2000&auto=format&fit=crop') no-repeat center center/cover;
+  text-align: center;
+  padding: 8rem 0;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+}

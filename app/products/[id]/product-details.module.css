@@ -1,0 +1,343 @@
+.container {
+    padding: 4rem 1rem;
+    min-height: 80vh;
+    margin-top: 60px;
+    background-color: transparent;
+    color: var(--foreground);
+}
+
+.productWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media (min-width: 992px) {
+    .productWrapper {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+}
+
+.imageSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    gap: 1.5rem;
+    border: 1px solid var(--card-border);
+}
+
+.mainImageContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    width: 70px;
+    height: 70px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.2s;
+    background: #fff;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* or contain, depending on image aspect ratio */
+}
+
+.thumbnail:hover {
+    border-color: #999;
+}
+
+.selectedThumbnail {
+    border: 2px solid #000;
+}
+
+.productImage {
+    max-width: 100%;
+    max-height: 600px;
+    object-fit: contain;
+}
+
+.detailsSection {
+    flex: 1;
+}
+
+.brand {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.concentration {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.stars {
+    color: #000;
+}
+
+.sizeSelection {
+    margin-bottom: 2rem;
+}
+
+.sizeOption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid var(--card-border);
+    border-bottom: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--card-bg);
+    color: var(--foreground);
+}
+
+.sizeOption:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.sizeOption:last-child {
+    border-bottom: 1px solid #e0e0e0;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.sizeOption.selected {
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 0 0 1px #000;
+}
+
+.sizeRadio {
+    /* Hide the actual radio button */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin-left: 1rem;
+    display: grid;
+    place-content: center;
+}
+
+.sizeRadio::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    background-color: #000;
+}
+
+.sizeOption.selected .sizeRadio {
+    border-color: #000;
+}
+
+.sizeOption.selected .sizeRadio::before {
+    transform: scale(1);
+}
+
+.metaInfo {
+    margin-bottom: 2rem;
+}
+
+.stockStatus {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #28a745;
+    /* Success Green */
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.deliveryInfo {
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.addToCartBtn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.addToCartBtn:hover {
+    background-color: #333;
+}
+
+.whatsappBtn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #25D366;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsappBtn:hover {
+    background-color: #128C7E;
+}
+
+.productInfo {
+    margin-top: 4rem;
+    padding-top: 2rem;
+}
+
+.infoTitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.description {
+    line-height: 1.6;
+    color: var(--foreground);
+    margin-bottom: 1.5rem;
+}
+
+.notes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.noteItem {
+    background-color: var(--card-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--foreground);
+    border: 1px solid var(--card-border);
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.originalPrice {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.discount {
+    background-color: #000;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    margin-top: 0.2rem;
+    display: inline-block;
+}
+
+.backBtn {
+    width: 100%;
+    padding: 1rem;
+    background-color: transparent;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.backBtn:hover {
+    background-color: #d4af37;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+}
+
+/* Dark Mode Override - Platinum/White Style */
+:global([data-theme='dark']) .backBtn {
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+    background-color: transparent !important;
+}
+
+:global([data-theme='dark']) .backBtn:hover {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4) !important;
+    transform: translateY(-2px);
+    border-color: #ffffff !important;
+}
